@@ -15,7 +15,6 @@ const entryGate = document.getElementById("entry-gate");
 const enterButton = document.getElementById("enter-story");
 const music = document.getElementById("background-music");
 const musicToggle = document.getElementById("music-toggle");
-const musicNote = document.getElementById("entry-music-note");
 const carousel = document.getElementById("photo-carousel");
 const track = carousel.querySelector(".photo-track");
 const cards = Array.from(document.querySelectorAll(CONFIG.photoSelector));
@@ -135,14 +134,10 @@ function probeMusic() {
         music.load();
       }
       musicToggle.hidden = !musicAvailable;
-      musicNote.textContent = musicAvailable
-        ? "进入后将尝试播放《特别的人》"
-        : "放入《特别的人》音频后，专属旋律会自动开启";
     })
     .catch(() => {
       musicAvailable = false;
       musicToggle.hidden = true;
-      musicNote.textContent = "放入《特别的人》音频后，专属旋律会自动开启";
     });
 }
 

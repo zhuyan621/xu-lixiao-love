@@ -192,3 +192,13 @@ body.entered .entry-gate { visibility:hidden; opacity:0; pointer-events:none; }
 
 .qr-image-wrap img { height: auto; aspect-ratio: 1; }
 
+
+.hero::after { content:"✧"; position:absolute; top:23%; right:11%; color:rgba(66,158,203,.34); font-size:1.35rem; pointer-events:none; animation:twinkle 3.2s ease-in-out infinite; }
+.story-card::before { content:"✦"; position:absolute; top:28px; right:30px; color:rgba(66,158,203,.3); font-size:1.15rem; pointer-events:none; animation:twinkle 3.8s ease-in-out infinite reverse; }
+.timer-card::after { content:"· ✦ ·"; position:absolute; top:-12px; right:24px; color:rgba(66,158,203,.38); font-size:.8rem; letter-spacing:.15em; pointer-events:none; animation:twinkle 4.4s ease-in-out infinite; }
+.photos::before { content:"✧"; position:absolute; top:19%; left:7%; color:rgba(66,158,203,.3); font-size:1.05rem; pointer-events:none; animation:twinkle 4.2s ease-in-out infinite; }
+.photos::after { content:"♡"; position:absolute; bottom:11%; right:6%; color:rgba(96,180,220,.28); font-size:1.35rem; pointer-events:none; animation:heart-bob 5s ease-in-out infinite; }
+.letter-card::after { content:"✦ ✦"; position:absolute; top:25px; right:30px; color:rgba(66,158,203,.28); font-size:.92rem; letter-spacing:.35em; pointer-events:none; animation:twinkle 4.8s ease-in-out infinite; }
+.ending::before { content:"♡ ♡"; position:absolute; top:7%; left:13%; color:rgba(96,180,220,.26); font-size:1.2rem; letter-spacing:.4em; pointer-events:none; animation:heart-bob 5.6s ease-in-out infinite reverse; }
+@keyframes twinkle { 0%,100% { opacity:.25; transform:scale(.92) rotate(-4deg); } 50% { opacity:.7; transform:scale(1.14) rotate(6deg); } }
+@keyframes heart-bob { 0%,100% { transform:translateY(0) rotate(-6deg); } 50% { transform:translateY(-10px) rotate(8deg); } }
