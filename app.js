@@ -7,7 +7,7 @@ const CONFIG = Object.freeze({
   togetherSince: "2024-05-20T20:13:14+08:00",
   photoSelector: ".photo-card",
   music: "assets/music/te-bie-de-ren.mp3",
-  shareUrl: "https://zhuyan621.github.io/xu-lixiao-love/"
+  shareUrl: "https://zhuyan621.github.io/xu-lixiao-love/index.html?v=20260920b"
 });
 
 const body = document.body;
