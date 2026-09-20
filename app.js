@@ -98,7 +98,7 @@ function enterStory() {
     startCarouselAutoPlay();
   }, 750);
 
-  if (musicAvailable || !music.error) {
+  if (musicAvailable) {
     music.volume = 0.42;
     music.play().then(() => {
       musicAvailable = true;
@@ -126,9 +126,14 @@ function toggleMusic() {
 }
 
 function probeMusic() {
-  fetch(music.currentSrc || music.src, { method: "HEAD", cache: "no-store" })
+  const musicUrl = new URL(CONFIG.music, window.location.href).href;
+  fetch(musicUrl, { method: "HEAD", cache: "no-store" })
     .then((response) => {
       musicAvailable = response.ok;
+      if (musicAvailable) {
+        music.src = CONFIG.music;
+        music.load();
+      }
       musicToggle.hidden = !musicAvailable;
       musicNote.textContent = musicAvailable
         ? "进入后将尝试播放《特别的人》"
